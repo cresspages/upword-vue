@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import overlay from './packages/components/overlay.vue'
-import pictureZoom from './packages/components/picture-zoom.vue'
 import lbxx from '@/assets/lbxx.png'
 
 const show = ref(false)
@@ -17,61 +15,12 @@ const show = ref(false)
     </a>
 
     <button @click="show = true">展示overlay</button>
-    <picture-zoom :src="lbxx"></picture-zoom>
-    <div class="list">
-      1 <br>
-      <br>
-      <br>
-      <br>
-      1 <br>
-      <br>
-      <br>
-      <br>
-      1 <br>
-      <br>
-      <br>
-      <br>
-      1 <br>
-      <br>
-      <br>
-      <br>
-      1 <br>
-      <br>
-      <br>
-      <br>
-      1 <br>
-      <br>
-      <br>
-      <br>
-      1 <br>
-      <br>
-      <br>
-      <br>
-      1 <br>
-      <br>
-      <br>
-      <br>
-      1 <br>
-      <br>
-      <br>
-      <br>
-      1 <br>
-      <br>
-      <br>
-      <br>
-      1 <br>
-      <br>
-      <br>
-      <br>
-      1 <br>
-      <br>
-      <br>
-      <br>
-    </div>
+    <!-- <up-picture-zoom :src="lbxx"></up-picture-zoom> -->
+    <up-show-picture v-model:show="show" :src="lbxx" />
 
-    <overlay v-model:show="show">
+    <!-- <up-overlay v-model:show="show">
       <div class="show-pic"></div>
-    </overlay>
+    </up-overlay> -->
   </div>
 </template>
 

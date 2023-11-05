@@ -13,5 +13,20 @@ export default defineConfig({
   },
   server: {
     host: '0.0.0.0'
+  },
+  build: {
+    lib: {
+      entry: 'packages/index.ts',
+      name: 'upwordVue', // 暴露的全局变量
+      fileName: 'upword-vue', // 输出的包文件名，默认package.json的name
+    },
+    rollupOptions: {
+      external: ['vue'],
+      output: {
+        globals: {
+          vue: 'Vue'
+        }
+      }
+    }
   }
 })
